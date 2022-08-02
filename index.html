@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
+<head> 
+<script>
+    function greeting(){
+        let name=prompt("Please enter your name: ");
+        window.alert('Hello '+name);
+        document.getElementById('demo').innerHTML = 'Hello '+ name;
+    }
+    function changeToRed(){
+        document.getElementById('demo').style.color = 'red';
+        document.getElementById('demo').style.fontSize = '30px';
+    }
+    function changeToDog(){
+        document.getElementById('pic').src="dog.jpg";
+    }
+    function changeToCat(){
+        document.getElementById('pic').src="cat.jpg";
+    }
+</script>
+
 </head>
 <body>
 
-<img src="https://images.theconversation.com/files/443350/original/file-20220131-15-1ndq1m6.jpg?ixlib=rb-1.1.0&rect=0%2C0%2C3354%2C2464&q=45&auto=format&w=926&fit=clip">
-<img src="https://images.theconversation.com/files/457052/original/file-20220408-15-pl446k.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip">
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<h2>My First JavaScript</h2>
+<img id="pic" src="cat.jpg"><br>
+
+
+<button type="button"
+onclick=greeting()>
+Click me to greeting.</button>
+<button type="button"
+onclick=changeToRed()>
+Click to change the color of text.</button>
+<button type="button"
+onclick=changeToCat()>
+Click to change the pic to cat.</button>
+<button type="button"
+onclick=changeToDog()>
+Click to change the pic to dog.</button>
+
+
+<p id="demo"></p>
 
 </body>
-</html>
+</html> 
