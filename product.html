@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product List</title>
+  </head>
+  <body>
+    <button type="button" onclick="toggleShowTable()">Show Table</button>
+    <div id="table"></div>
+    <script>
+      const products = [
+        {
+          id: 1,
+          name: "Quantum Stream Dual pattern premium USB microphone for streaming, recording and gaming",
+          price: 4990,
+          img: "https://www.soundproofbrosaudio.com/uploads/images/220525145822e1DQ.jpg",
+        },
+        {
+          id: 2,
+          name: "Thronmax MDrill One Pro digital USB microphones. (Silver)",
+          price: 3990,
+          img: "https://www.soundproofbrosaudio.com/uploads/images/211026123301B6K5.jpg",
+        },
+        {
+          id: 3,
+          name: "Beyerdynamic M 70 PRO X Dynamic broadcast microphone for streaming and podcasting",
+          price: 10900,
+          img: "https://www.soundproofbrosaudio.com/uploads/images/220716172844YAZW.jpg",
+        },
+        {
+          id: 4,
+          name: "Blue YETI Microphone (Midnight Blue)",
+          price: 6990,
+          img: "https://www.soundproofbrosaudio.com/uploads/images/2202061431455a8M.jpg",
+        },
+        {
+          id: 5,
+          name: "ADV CIRCUIT Multi-pattern USB Microphone",
+          price: 6990,
+          img: "https://www.soundproofbrosaudio.com/uploads/images/210804175241WqPg.jpg",
+        },
+        {
+          id: 6,
+          name: "USB Razer Seiren Mini Ultra-compact Streaming Microphone (Black)",
+          price: 1690,
+          img: "https://www.soundproofbrosaudio.com/uploads/images/2011101201389rQz.jpg",
+        },
+        {
+          id: 7,
+          name: "USB HyperX QuadCast S USB Condenser Gaming Microphone RGB",
+          price: 5990,
+          img: "https://www.soundproofbrosaudio.com/uploads/images/2012031512277agV.jpg",
+        },
+        {
+          id: 8,
+          name: "Blue Yeti X Profession USB Microphone For Gaming, Streaming & Podcasting",
+          price: 9990,
+          img: "https://www.soundproofbrosaudio.com/uploads/images/210716135037SYX7.jpg",
+        },
+        {
+          id: 9,
+          name: "Saramonic SR-MV7000 MULTI-PATTERN XLR &USB CONDENSER MICROPHONE",
+          price: 13000,
+          img: "https://www.soundproofbrosaudio.com/uploads/images/201126113753Fru3.jpg",
+        },
+        {
+          id: 10,
+          name: "FIFINE K670 USB MICROPHONE FOR STREAMING PODCASTING (Silver)",
+          price: 1890,
+          img: "https://www.soundproofbrosaudio.com/uploads/images/210220115222zURM.jpg",
+        },
+        
+      ];
+
+      const tableElement = document.getElementById("table");
+
+      let isShowing = false;
+
+      function createTable() {
+        let tableHTML = `<table border='1|1'>`;
+        tableHTML += `<tr>`;
+        tableHTML += `<td>id</td>`;
+        tableHTML += `<td>name</td>`;
+        tableHTML += `<td>price</td>`;
+        tableHTML += `<td>img</td>`;
+        tableHTML += `</tr>`;
+        products.forEach(function (product) {
+          tableHTML += `<tr>`;
+          tableHTML += `<td>${product.id}</td>`;
+          tableHTML += `<td>${product.name}</td>`;
+          tableHTML += `<td>${product.price}</td>`;
+          tableHTML += `<td><img src="${product.img}" width="300" height="400"/></td>`;
+          tableHTML += `</tr>`;
+        });
+        return tableHTML;
+      }
+
+      function toggleShowTable() {
+        isShowing = !isShowing;
+        if (isShowing) {
+          tableElement.innerHTML = createTable();
+        } else {
+          tableElement.innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>
